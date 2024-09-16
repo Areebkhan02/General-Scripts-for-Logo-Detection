@@ -5,8 +5,11 @@ from tqdm import tqdm
 import yt_dlp as youtube_dl
 
 # Set your Google Custom Search API Key and Search Engine ID
-API_KEY = 'AIzaSyBv1b1Mz6rVpsYHki5ns-qLfT0ZkGuUw5o'  # Replace with your Google API key
-SEARCH_ENGINE_ID = '03a4c9f15b5ad42de'  # Replace with your search engine ID
+#'AIzaSyBv1b1Mz6rVpsYHki5ns-qLfT0ZkGuUw5o' API key
+# '03a4c9f15b5ad42de' search engine ID 
+
+API_KEY =  'xxxx' # Replace with your Google API key
+SEARCH_ENGINE_ID = 'xxx'  # Replace with your search engine ID
 
 def search_text(query, api_key, search_engine_id):
     """Searches Google Images using a provided text query."""
