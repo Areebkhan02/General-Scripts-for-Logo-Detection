@@ -2,9 +2,9 @@ import os
 import cv2
 
 # Paths to your directories
-image_dir = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/BetWay_Issue/images'  # Update with your image directory
-label_dir = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/BetWay_Issue/labels'  # Update with your label directory
-output_dir = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/BetWay_Issue/bbox_images'  # Update with your output directory
+image_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/images'  # Update with your image directory
+label_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/labels'  # Update with your label directory
+output_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/bbox'  # Update with your output directory
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
@@ -42,7 +42,7 @@ def draw_bboxes(image, bboxes):
         
         # Draw rectangle and put label
         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        cv2.putText(image, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+        cv2.putText(image, class_name, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), 3)
     return image
 
 # Iterate through images and corresponding labels

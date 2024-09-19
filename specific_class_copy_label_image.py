@@ -65,11 +65,11 @@ def copy_files(images_folder, labels_folder, class_name, dest_images_folder, des
 
 if __name__ == "__main__":
     # Input from the user
-    images_folder = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/images'
-    labels_folder = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/labels'
-    class_name = '4'
-    dest_images_folder = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/BetWay_Issue/images'
-    dest_labels_folder = 'Datasets/47_logos_dataset/10_classes_final/final/split2/train_comb/BetWay_Issue/labels'
+    images_folder = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/images'
+    labels_folder = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/labels'
+    class_name = '24'                                                                                                                                                                                                                                                                                                                                                                               
+    dest_images_folder = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/Engelbert Strauss/images'
+    dest_labels_folder = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/Engelbert Strauss/labels'
 
     # Copy files based on the class name
     copy_files(images_folder, labels_folder, class_name, dest_images_folder, dest_labels_folder)
