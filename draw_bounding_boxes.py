@@ -2,9 +2,9 @@ import os
 import cv2
 
 # Paths to your directories
-image_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/images'  # Update with your image directory
-label_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/labels'  # Update with your label directory
-output_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/TARGOBANK/bbox'  # Update with your output directory
+image_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/images'  # Update with your image directory
+label_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/labels'  # Update with your label directory
+output_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/bbox'  # Update with your output directory
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
