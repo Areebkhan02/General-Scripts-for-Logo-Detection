@@ -14,10 +14,11 @@ def clean_dataset(dataset_path, output_path):
     """
     
     # Initialize imagelab with the dataset
+    issue_types = {"exact_duplicates": {} , "near_duplicates": {"hash_size": 6}, "blurry": {}, "low_information": {}}
     imagelab = Imagelab(data_path=dataset_path)
 
     # Find issues in the dataset
-    imagelab.find_issues()
+    imagelab.find_issues(issue_types)
 
     # Display summary of issues to the user
     print("\nIssue Summary:")
