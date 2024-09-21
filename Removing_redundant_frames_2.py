@@ -14,7 +14,7 @@ def clean_dataset(dataset_path, output_path):
     """
     
     # Initialize imagelab with the dataset
-    issue_types = {"exact_duplicates": {} , "near_duplicates": {"hash_size": 6}, "blurry": {}, "low_information": {}}
+    issue_types = {"exact_duplicates": {} , "near_duplicates": {"hash_size": 4}, "blurry": {}, "low_information": {}}
     imagelab = Imagelab(data_path=dataset_path)
 
     # Find issues in the dataset
@@ -86,7 +86,7 @@ def clean_dataset(dataset_path, output_path):
 if __name__ == "__main__":
     # Define your dataset and output paths
     dataset_path = "/home/areebadnan/Areeb_code/work/Visua_Data/output_videos/657f9aecb4ceda0d11ae9507/images"
-    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp5"
+    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp6"
     
     # Call the cleaning function
     clean_dataset(dataset_path, output_path)
