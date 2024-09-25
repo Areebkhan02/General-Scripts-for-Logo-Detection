@@ -1,18 +1,19 @@
 import os
 import random
-import shutil
 from cleanvision import Imagelab
 
-def clean_dataset(dataset_path, output_path):
+def clean_dataset(dataset_path):
     """
     Cleans the dataset by removing exact duplicates, near duplicates, blurry, and low-information images
-    based on user input and copies the cleaned data to a specified output path.
+    based on user input.
 
     Args:
         dataset_path (str): Path to the input dataset.
-        output_path (str): Path to save the cleaned dataset.
     """
     
+    # Normalize the dataset path to handle cross-platform file path issues
+    dataset_path = os.path.normpath(dataset_path)
+
     # Initialize imagelab with the dataset
     imagelab = Imagelab(data_path=dataset_path)
 
@@ -59,29 +60,19 @@ def clean_dataset(dataset_path, output_path):
         removal_files = set(exact_duplicate_files + near_duplicate_files + blurry_files + low_info_files)
         print(f"Total files to remove: {len(removal_files)}")
 
-        # Step 5: Copy files from the dataset to the output directory, excluding those in the removal set
-        if not os.path.exists(output_path):
-            os.makedirs(output_path)  # Create the output directory if it doesn't exist
-        
-
-        print(len(removal_files))
+        # Step 5: Delete the problematic files from the dataset directory
         for root, dirs, files in os.walk(dataset_path):
             for file in files:
-                source_file = os.path.join(root, file)
-                #print(source_file)
-                if source_file not in removal_files:  # Only copy files not in the removal set
-                    relative_path = os.path.relpath(source_file, dataset_path)
-                    print(relative_path)
-                    destination_file = os.path.join(output_path, relative_path)
-                    print(destination_file)
-                    destination_dir = os.path.dirname(destination_file)
-                    print(destination_dir)
+                file_path = os.path.join(root, file)
+                file_path = os.path.normpath(file_path)  # Normalize file path for Windows compatibility
+                if file_path in removal_files:  # Only delete files in the removal set
+                    try:
+                        print(f"Deleting {file_path}")
+                        os.remove(file_path)
+                    except Exception as e:
+                        print(f"Error deleting {file_path}: {e}")
 
-                    if not os.path.exists(destination_dir):
-                        os.makedirs(destination_dir)  # Create subdirectories if necessary
-
-                    shutil.copy2(source_file, destination_file)  # Copy the file with metadata
-        print(f"Cleaned dataset has been copied to {output_path}")
+        print("Cleaned dataset by removing unwanted files.")
 
     else:
         print("No remedies applied. Exiting.")
@@ -89,9 +80,8 @@ def clean_dataset(dataset_path, output_path):
 
 # Main entry point for the script
 if __name__ == "__main__":
-    # Define your dataset and output paths
+    # Define your dataset path
     dataset_path = "/home/areebadnan/Areeb_code/work/Visua_Data/output_videos/65605d69cc6286cec0577f75/images"
-    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp10"
     
     # Call the cleaning function
-    clean_dataset(dataset_path, output_path)
+    clean_dataset(dataset_path)

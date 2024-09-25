@@ -75,7 +75,8 @@ def clean_dataset(dataset_path, output_path):
                     if not os.path.exists(destination_dir):
                         os.makedirs(destination_dir)  # Create subdirectories if necessary
 
-                    shutil.copy2(source_file, destination_file)  # Copy the file with metadata
+                    #shutil.copy2(source_file, destination_file)  # Copy the file with metadata
+                    shutil.move(source_file, destination_file) 
         print(f"Cleaned dataset has been copied to {output_path}")
 
     else:
@@ -85,8 +86,8 @@ def clean_dataset(dataset_path, output_path):
 # Main entry point for the script
 if __name__ == "__main__":
     # Define your dataset and output paths
-    dataset_path = "/home/areebadnan/Areeb_code/work/Visua_Data/output_videos/657f9aecb4ceda0d11ae9507/images"
-    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp6"
+    dataset_path = "/home/areebadnan/Areeb_code/work/Visua_Data/output_videos/665574742d8811a6d00d16e2 (copy)/images"
+    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp9"
     
     # Call the cleaning function
     clean_dataset(dataset_path, output_path)
