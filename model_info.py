@@ -52,5 +52,7 @@ def main(file_path):
 
 if __name__ == "__main__":
     # Provide the path to your .pt file here
-    file_path = "/home/areebadnan/Areeb_code/work/Atheritia/47_(10)_logos_head_17logosbase_L_2/train/weights/best.pt"
+    file_path = "/home/areebadnan/Areeb_code/work/Atheritia/All_models/Large/14layers_freeze_3heads_merged_retrain.pt"
     main(file_path)
+
+
