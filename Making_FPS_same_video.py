@@ -51,7 +51,7 @@ def match_fps(video_path_1, video_path_2, output_path_1, output_path_2):
 
 # Paths for the input videos and output videos
 video_path_1 = '/home/areebadnan/Areeb_code/work/Visua_Data/firefly_videos/cam2.mp4'
-video_path_2 = '/home/areebadnan/Areeb_code/work/Visua_Data/firefly_videos/cam1.mp4'
+video_path_2 = '/home/areebadnan/Areeb_code/work/Visua_Data/firefly_videos/cam.mp4'
 output_path_1 = '/home/areebadnan/Areeb_code/work/Visua_Data/firefly_videos/output_cam1.mp4'
 output_path_2 = '/home/areebadnan/Areeb_code/work/Visua_Data/firefly_videos/output_cam2.mp4'
 
