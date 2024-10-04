@@ -52,7 +52,7 @@ def main(file_path):
 
 if __name__ == "__main__":
     # Provide the path to your .pt file here
-    file_path = "/home/areebadnan/Areeb_code/work/Atheritia/All_models/Large/14layers_freeze_3heads_merged_retrain.pt"
+    file_path = "/home/areebadnan/Areeb_code/work/Atheritia/All_models/Large/coco_base_finetune_17logo_L.pt"
     main(file_path)
 
 
