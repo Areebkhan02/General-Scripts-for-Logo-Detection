@@ -13,7 +13,7 @@ class DownloadManager:
         """
         Initializes DownloadManager with directory paths and dictionaries.
         """
-        self.json_folder = 'Scripts/Json_data/json_exp'  # Define the folder name here
+        self.json_folder = '/home/areebadnan/Areeb_code/work/Visua_Data/visua_jsons/json_merged'  # Define the folder name here
         self.url_to_brands = {}  # Dictionary to map downloadUrl to brandName_logoId and medium (video name)
 
         # Lists for prioritization
@@ -127,10 +127,10 @@ class DownloadManager:
 # Start the process based on target brandName_logoId
 if __name__ == "__main__":
     # Example list of brandName_logoId to filter
-    target_brand_logo = ['Viessmann_34159', 'TikTok_115050', 'bwin_33291']  # Example input: 'brandName_logoId'
+    target_brand_logo = ['Libertex_189377', 'EWE_90298', 'BKW_91882']  # Example input: 'brandName_logoId'
 
     # Path to save the Excel file
-    excel_save_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Json_data/json_exp/videos_2.xlsx"
+    excel_save_path = "/home/areebadnan/Areeb_code/work/Visua_Data/visua_jsons/videos.xlsx"
 
     # Initialize and run the download manager
     manager = DownloadManager()
