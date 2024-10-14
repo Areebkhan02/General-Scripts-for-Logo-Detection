@@ -2,16 +2,29 @@ import os
 import cv2
 
 # Paths to your directories
-image_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/images'  # Update with your image directory
-label_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/labels'  # Update with your label directory
-output_dir = 'Datasets/3heads_merged_dataset/47_37_val_logos_dataset/issue_checking/ERGO/bbox'  # Update with your output directory
+image_dir = '/home/areebadnan/Areeb_code/work/Atheritia/Datasets/17_logo_variants_dataset/dataset/val/images'  # Update with your image directory
+label_dir = '/home/areebadnan/Areeb_code/work/Atheritia/Datasets/17_logo_variants_dataset/dataset/val/labels'  # Update with your label directory
+output_dir = '/home/areebadnan/Areeb_code/work/Atheritia/Datasets/17_logo_variants_dataset/dataset/val/bbox'  # Update with your output directory
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
 # Define a mapping from class ID to class name
 class_mapping = {
-    4: 'BetWay',  # Replace with your actual class names
+    0: 'adidas_2',
+    1: 'adidas_3',
+    2: 'adidas_4',
+    3: 'allianz_2',
+    4: 'allianz_3',
+    5: 'audi_2',
+    6: 'joma_2',
+    7: 'joma_3',
+    8: 'mercesdes_2',
+    9: 'mercesdes_3',
+    10: 'porsche_2',
+    11: 'puma_2',
+    12: 'puma_3',
+    13: 'toyota_2'  # Replace with your actual class names
 }
 
 # Function to load YOLO formatted labels
