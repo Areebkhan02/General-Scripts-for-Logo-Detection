@@ -13,7 +13,7 @@ class DownloadManager:
         """
         Initializes DownloadManager with directory paths and dictionaries.
         """
-        self.json_folder = 'Scripts/Json_data/json_exp'  # Define the folder name here
+        self.json_folder = '/home/areebadnan/Areeb_code/work/Visua_Data/visua_jsons/json_merged/'  # Define the folder name here
         self.url_to_brands = {}  # Dictionary to map downloadUrl to brandName_logoId
 
         # Lists for prioritization
@@ -119,10 +119,29 @@ class DownloadManager:
 # Start the process based on target brandName_logoId
 if __name__ == "__main__":
     # Example list of brandName_logoId to filter
-    target_brand_logo = ['Viessmann_34159', 'TikTok_115050', 'bwin_33291']  # Example input: 'brandName_logoId'
+    #target_brand_logo = ['Viessman_34159', 'TikTok_115050', 'bwin_33291']  # Example input: 'brandName_logoId'
+
+    target_brand_logo = [
+    "Audi_15085",
+    "MercedesBenz_8279",
+    "Toyota_634",
+    "Porsche_1112",
+    "Nike_537",
+    "Adidas_732",
+    "Emirates_48625",
+    "Hummel_44909",
+    "Coca-Cola_2",
+    "Qatar_14663",
+    "T-Mobil_5002",
+    "Allianz_208",
+    "bwin_33291",
+    "DEVK_50527",
+    "RheinEnergie_184771",
+    "Rewe_50525"
+    ]
 
     # Path to save the Excel file
-    excel_save_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Json_data/json_exp/videos.xlsx"
+    excel_save_path = "/home/areebadnan/Areeb_code/work/Visua_Data/visua_jsons/17_logos_videoname.xlsx"
 
     # Initialize and run the download manager
     manager = DownloadManager()
