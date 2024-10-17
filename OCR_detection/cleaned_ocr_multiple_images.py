@@ -8,8 +8,12 @@ from difflib import get_close_matches
 ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=False, verbose=False)
 
 # List of logos # logos in lowercase
-logos = ['herthabsc', 'autohero', 'hyundai', 'coca-cola', 'betway', '94/rs2', 'berlinerkindl', 'homeday', 'rewe', 'ford', 'hummel', 'stahlwerk', 'bwin', 'magentasport']
-
+logos = [
+    'paulaner', 'bkw', 'konami', 'gaffel', 'dhl', 'e football', 'bitburger', 
+    'viessmann', 'helvetia', 'union investment', 'raiffeisen', 'libertex', 
+    'ergo', 'wiesenhof', 'siemens', 'ewe', 'prezero', 'einhell', 'adobe', 
+    'autohero', 'henkel', 'flyeralarm', 'sunrise', 'hylo', '94,3 rs2'
+]
 def process_image(img_path):
     """
     Run OCR on a single image and process the results.
@@ -54,8 +58,8 @@ def draw_boxes(image, result):
     return image
 
 if __name__ == "__main__":
-    input_folder = 'input_images/testing_images_new'
-    output_folder = 'output_images/output_images_test'
+    input_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/images'
+    output_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/ground_truth_labels'
 
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
