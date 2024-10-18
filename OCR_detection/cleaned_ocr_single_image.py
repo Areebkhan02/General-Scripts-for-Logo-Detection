@@ -9,7 +9,7 @@ from difflib import get_close_matches
 ocr = PaddleOCR(use_angle_cls=True, lang='en', use_gpu=False, verbose=False)  # Use English as an example
 
 # Test a simple image
-img_path = '/home/areebadnan/Areeb_code/work/Atheritia/Scripts/OCR_detection/input_images/testing_images/5f63aed26b04d6002afa6bf9.jpg'  # Ensure this image exists
+img_path = '/home/areebadnan/Areeb_code/work/Atheritia/Scripts/General-Scripts-for-Logo-Detection/OCR_detection/input_images/testing_images/5f63aed26b04d6002afa6bf9.jpg'  # Ensure this image exists
 result = ocr.ocr(img_path, rec=True)
 
 # Print the result
