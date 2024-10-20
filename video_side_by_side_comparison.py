@@ -82,7 +82,7 @@ def create_side_by_side_video(video1_path, video2_path, output_path):
     side_by_side.write_videofile(output_path, fps=video1.fps)
 
 # Example usage
-path1 = "/home/areebadnan/Areeb_code/work/Visua_Data/videos/17logoslinkedin_predict_yolov8/17logoslinkedin.avi"
-path2 = "/home/areebadnan/Areeb_code/work/Visua_Data/videos/17logoslinkedin_predict/17logoslinkedin.avi"
+path1 = "/home/areebadnan/Areeb_code/work/Visua_Data/videos/17logoslinkedin_yolov8_track/17logoslinkedin.avi"
+path2 = "/home/areebadnan/Areeb_code/work/Visua_Data/videos/17logoslinkedin_yolo11_track/17logoslinkedin.avi"
 
-create_side_by_side_video(path1, path2, "/home/areebadnan/Areeb_code/work/Visua_Data/videos/comparison_video2.mp4")
+create_side_by_side_video(path1, path2, "/home/areebadnan/Areeb_code/work/Visua_Data/videos/comparison_video_track.mp4")
