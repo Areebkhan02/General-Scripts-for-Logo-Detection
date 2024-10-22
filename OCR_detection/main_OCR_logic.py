@@ -78,38 +78,31 @@ def process_images(input_folder, output_image_folder, output_label_folder):
     ocr = initialize_ocr()
     
     # Dictionary of logos with class numbers
+    # logos_dict = {
+    #     'Stahlwerk': 0,
+    #     'tipico': 1,
+    #     'betway': 2,
+    #     'sap': 3,
+    #     'penny': 4
+    # }
+
     logos_dict = {
-    'paulaner': 0,
-    'bkw': 1,
-    'konami': 2,
-    'gaffel': 3,
-    'dhl': 4,
-    'e football': 5,
-    'bitburger': 6,
-    'viessmann': 7,
-    'helvetia': 8,
-    'union investment': 9,
-    'raiffeisen': 10,
-    'libertex': 11,
-    'ergo': 12,
-    'wiesenhof': 13,
-    'siemens': 14,
-    'ewe': 15,
-    'prezero': 16,
-    'einhell': 17,
-    'adobe': 18,
-    'autohero': 19,
-    'henkel': 20,
-    'flyeralarm': 21,
-    'sunrise': 22,
-    'hylo': 23,
-    '94,3 rs2': 24
-}
+        'adidas': 0,
+        'coca-cola': 1,
+        'qatar': 2,
+        'allianz': 3,
+        'bwin': 4,
+        'devk': 5,
+        'rheinenergie': 6,
+        'rewe': 7
+    }
     
     # Process each image in the input folder
     for image_filename in os.listdir(input_folder):
         if image_filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             image_path = os.path.join(input_folder, image_filename)
+            # Print the filename before performing OCR
+            print(f"Performing OCR on: {image_filename}")
             image = cv2.imread(image_path)
             image_height, image_width = image.shape[:2]
             
@@ -139,10 +132,13 @@ def process_images(input_folder, output_image_folder, output_label_folder):
             save_labels_with_bboxes(yolo_bboxes, label_file_path)
             print(f"Labels and bounding boxes saved at {label_file_path}")
 
+            del image
+            cv2.destroyAllWindows()
+
 def main():
-    input_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/images'
-    output_image_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/ocr_images'
-    output_label_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/ocr_labels'
+    input_folder = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/images'
+    output_image_folder = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/new_try/ocr_images'
+    output_label_folder = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/new_try/ocr_labels'
     
     # Ensure output directories exist
     os.makedirs(output_image_folder, exist_ok=True)
