@@ -2,40 +2,20 @@ import os
 import cv2
 
 # Paths to your directories
-image_dir = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/images'  # Update with your image directory
-label_dir = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/labels'  # Update with your label directory
-output_dir = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/images_bbox'  # Update with your output directory
+image_dir = 'OCR_detection/Dataset/Textual_logos_dataset/47_(10)_textual_dataset/images'  # Update with your image directory
+label_dir = 'OCR_detection/Dataset/Textual_logos_dataset/47_(10)_textual_dataset/labels'  # Update with your label directory
+output_dir = 'OCR_detection/Dataset/Textual_logos_dataset/47_(10)_textual_dataset/images_bbox_orginal'  # Update with your output directory
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_dir, exist_ok=True)
 
 # Define a mapping from class ID to class name
 class_mapping = {
-    0: "Paulaner",
-    1: "BKW",
-    2: "Konami",
-    3: "Gaffel",
-    4: "DHL",
-    5: "E Football",
-    6: "Bitburger",
-    7: "Viessmann",
-    8: "Helvetia",
-    9: "Union Investment",
-    10: "Raiffeisen",
-    11: "Libertex",
-    12: "ERGO",
-    13: "Wiesenhof",
-    14: "Siemens",
-    15: "EWE",
-    16: "PreZero",
-    17: "Einhell",
-    18: "Adobe",
-    19: "Autohero",
-    20: "Henkel",
-    21: "Flyeralarm",
-    22: "Sunrise",
-    23: "Hylo",
-    24: "94,3 rs2"
+    0: "Stahlwerk",
+    1: "tipico",
+    2: "BetWay",
+    3: "SAP",
+    4: "PENNY"
 }
 
 # Function to load YOLO formatted labels
