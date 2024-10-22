@@ -65,11 +65,11 @@ def copy_files(images_folder, labels_folder, class_names, dest_images_folder, de
 
 if __name__ == "__main__":
     # Input from the user
-    images_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/images_cleaned'
-    labels_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/labels_cleaned'
-    class_names = ['0', '1', '2', '3', '6', '7', '8', '10', '11', '12', '13', '14', '20', '21', '22', '23', '25', '26', '27', '29', '31', '32', '34', '35', '36']
-    dest_images_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/images'
-    dest_labels_folder = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/labels'
+    images_folder = '/home/areebadnan/Areeb_code/work/Atheritia/Datasets/47_logos_dataset/10_classes_final/final/split2/47_(10)_cleaned_images/images'
+    labels_folder = '/home/areebadnan/Areeb_code/work/Atheritia/Datasets/47_logos_dataset/10_classes_final/final/split2/47_(10)_cleaned_images/labels'
+    class_names = ['1', '3', '4', '5', '9']
+    dest_images_folder = 'OCR_detection/Dataset/Textual_logos_dataset/47_(10)_textual_dataset/images'
+    dest_labels_folder = 'OCR_detection/Dataset/Textual_logos_dataset/47_(10)_textual_dataset/labels'
 
     # Copy files based on the class names
     copy_files(images_folder, labels_folder, class_names, dest_images_folder, dest_labels_folder)
