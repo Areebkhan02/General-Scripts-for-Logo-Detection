@@ -6,7 +6,7 @@ import seaborn as sns
 from scipy.optimize import linear_sum_assignment
 
 # Define the Intersection over Union (IoU) threshold
-IOU_THRESHOLD = 0.0001
+IOU_THRESHOLD = 0.15
 
 def compute_iou(groundtruth_box, detection_box):
     """
@@ -254,38 +254,58 @@ def display(confusion_matrix, categories, output_path):
     save_confusion_matrix(confusion_matrix, class_names, output_path, normalized=True)
 
 # Define directories and categories
-groundtruth_dir = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/groundtruth_labels'
-detection_dir = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/ocr_labels'
-output_path = 'OCR_detection/Dataset/Textual_logos_dataset/37_logo_cleaned_data/37_textual_logos/output'
+groundtruth_dir = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/labels'
+detection_dir = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/new_try/ocr_labels'
+output_path = 'Dataset/Textual_logos_dataset/17_logo_textual_dataset/new_try/output_0.15'
 
 categories = [
-    {"id": 0, "name": "Paulaner"},
-    {"id": 1, "name": "BKW"},
-    {"id": 2, "name": "Konami"},
-    {"id": 3, "name": "Gaffel"},
-    {"id": 4, "name": "DHL"},
-    {"id": 5, "name": "E Football"},
-    {"id": 6, "name": "Bitburger"},
-    {"id": 7, "name": "Viessmann"},
-    {"id": 8, "name": "Helvetia"},
-    {"id": 9, "name": "Union Investment"},
-    {"id": 10, "name": "Raiffeisen"},
-    {"id": 11, "name": "Libertex"},
-    {"id": 12, "name": "ERGO"},
-    {"id": 13, "name": "Wiesenhof"},
-    {"id": 14, "name": "Siemens"},
-    {"id": 15, "name": "EWE"},
-    {"id": 16, "name": "PreZero"},
-    {"id": 17, "name": "Einhell"},
-    {"id": 18, "name": "Adobe"},
-    {"id": 19, "name": "Autohero"},
-    {"id": 20, "name": "Henkel"},
-    {"id": 21, "name": "Flyeralarm"},
-    {"id": 22, "name": "Sunrise"},
-    {"id": 23, "name": "Hylo"},
-    {"id": 24, "name": "94,3 rs2"}
+    {"id": 0, "name": "adidas"},
+    {"id": 1, "name": "coca-cola"},
+    {"id": 2, "name": "qatar"},
+    {"id": 3, "name": "allianz"},
+    {"id": 4, "name": "bwin"},
+    {"id": 5, "name": "devk"},
+    {"id": 6, "name": "rheinenergie"},
+    {"id": 7, "name": "rewe"}
 ]
 
+
+# categories = [
+#     {"id": 0, "name": "Stahlwerk"},
+#     {"id": 1, "name": "tipico"},
+#     {"id": 2, "name": "betway"},
+#     {"id": 3, "name": "sap"},
+#     {"id": 4, "name": "penny"}
+# ]
+
+
+# categories = [
+#     {"id": 0, "name": "Paulaner"},
+#     {"id": 1, "name": "BKW"},
+#     {"id": 2, "name": "Konami"},
+#     {"id": 3, "name": "Gaffel"},
+#     {"id": 4, "name": "DHL"},
+#     {"id": 5, "name": "E Football"},
+#     {"id": 6, "name": "Bitburger"},
+#     {"id": 7, "name": "Viessmann"},
+#     {"id": 8, "name": "Helvetia"},
+#     {"id": 9, "name": "Union Investment"},
+#     {"id": 10, "name": "Raiffeisen"},
+#     {"id": 11, "name": "Libertex"},
+#     {"id": 12, "name": "ERGO"},
+#     {"id": 13, "name": "Wiesenhof"},
+#     {"id": 14, "name": "Siemens"},
+#     {"id": 15, "name": "EWE"},
+#     {"id": 16, "name": "PreZero"},
+#     {"id": 17, "name": "Einhell"},
+#     {"id": 18, "name": "Adobe"},
+#     {"id": 19, "name": "Autohero"},
+#     {"id": 20, "name": "Henkel"},
+#     {"id": 21, "name": "Flyeralarm"},
+#     {"id": 22, "name": "Sunrise"},
+#     {"id": 23, "name": "Hylo"},
+#     {"id": 24, "name": "94,3 rs2"}
+# ]
 # Example usage:
 confusion_matrix = process_detections(groundtruth_dir, detection_dir, categories)
 display(confusion_matrix, categories, output_path)
