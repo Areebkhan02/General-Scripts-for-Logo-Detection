@@ -86,8 +86,8 @@ def clean_dataset(dataset_path, output_path):
 # Main entry point for the script
 if __name__ == "__main__":
     # Define your dataset and output paths
-    dataset_path = "/home/areebadnan/Areeb_code/work/Visua_Data/output_videos/665574742d8811a6d00d16e2 (copy)/images"
-    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Scripts/Experiments for scripts/Redudant_frames_script_experiment/exp9"
+    dataset_path = "/home/areebadnan/Areeb_code/work/Atheritia/Datasets/47_logos_dataset/10_classes_final/final/split2/47_(10)_cleaned_images/images"
+    output_path = "/home/areebadnan/Areeb_code/work/Atheritia/Datasets/47_logos_dataset/10_classes_final/final/split2/47_(10)_cleaned_images/images_new"
     
     # Call the cleaning function
     clean_dataset(dataset_path, output_path)
